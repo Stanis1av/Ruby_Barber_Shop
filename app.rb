@@ -44,9 +44,10 @@ post '/visit' do
   @phone = params[:phone]
   @datetime = params[:datetime]
   @hairdresser = params[:hairdresser]
+  @color = params[:color]
 
   client = File.open './public/client.txt', 'a'
-  client.write "Name: #{@username}, phone: #{@phone}, time: #{@datetime}\nHairdresser: #{@hairdresser}"
+  client.write "Name: #{@username}, phone: #{@phone}, time: #{@datetime}\nHairdresser: #{@hairdresser}\nColor: #{@color}\n"
   client.close
 
   erb :visit
